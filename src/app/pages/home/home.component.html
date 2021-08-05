@@ -1,0 +1,21 @@
+<div class="home">
+    <div class="home__header">
+        <div class="home__headerLeft">
+            <a routerLink="/search">About</a>
+            <a routerLink="/search">Store</a>
+        </div>
+        <div class="home__headerRight">
+            <a routerLink="/search">Gmail</a>
+            <a routerLink="/search">Images</a>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">apps</mat-icon>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">account_circle</mat-icon>
+
+        </div>
+    </div>
+    <div class="home__body">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="">
+        <div class="home__inputContainer">
+            <app-search-box [hideButtons]=false></app-search-box>
+        </div>
+    </div>
+</div>

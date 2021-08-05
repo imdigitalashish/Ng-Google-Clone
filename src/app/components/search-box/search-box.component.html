@@ -1,0 +1,19 @@
+<form class="search">
+    <div class="search__input">
+        <mat-icon class="search__inputIcon" aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+        <input #searchQuery />
+        <mat-icon aria-hidden="false" aria-label="Example home icon">mic</mat-icon>
+    
+    </div>
+    <div *ngIf="!hideButtons" class="search__buttons">
+        <button mat-stroked-button (click)="print(searchQuery.value); $event.preventDefault()">Google Search</button>
+        <button mat-stroked-button>I'm Feeling Lucky</button>
+
+    </div>
+    <div *ngIf="hideButtons" class="search__buttonsHidden">
+        <button mat-stroked-button (click)="print(searchQuery.value); $event.preventDefault()">Google Search</button>
+        <button mat-stroked-button>I'm Feeling Lucky</button>
+
+    </div>
+
+</form>

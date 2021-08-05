@@ -1,0 +1,46 @@
+<div class="searchPage">
+    <div class="searchPage__header">
+        <a routerLink="/"><img class="searchPage__logo"
+                src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt=""></a>
+        <div class="seachPage__headerBody">
+            <form class="search">
+                <div class="search__input">
+                    <mat-icon class="search__inputIcon" aria-hidden="false" aria-label="Example home icon">search
+                    </mat-icon>
+                    <input #searchQuery />
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">mic</mat-icon>
+
+                </div>
+                <div *ngIf="!hideButtons" class="search__buttons">
+                    <button mat-stroked-button (click)="print(searchQuery.value); $event.preventDefault()">Google
+                        Search</button>
+                    <button mat-stroked-button>I'm Feeling Lucky</button>
+
+                </div>
+                <div *ngIf="hideButtons" class="search__buttonsHidden">
+                    <button mat-stroked-button (click)="print(searchQuery.value); $event.preventDefault()">Google
+                        Search</button>
+                    <button mat-stroked-button>I'm Feeling Lucky</button>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="searchPage__result">
+        <p class="searchPage__resultCount">
+            About {{this.data?.searchInformation!.formattedSearchTime}} results in
+            {{this.data?.searchInformation!.formattedSearchTime}} for {{term}}
+        </p>
+        <div *ngFor="let item of this.data?.items" class="searchPage__results">
+            <!-- <a href="{{ item.link }}"> {{item.displayLink}} </a> -->
+            <a href="{{item.link}}" class="searchPage__topLink">{{item.displayLink}}</a>
+            <a class="searchPage__resultTitle" href="{{item.link}}">
+                <h2>{{item.title}}</h2>
+            </a>
+            <p class="searchPage__resultSnippet">
+                {{item.snippet}}
+            </p>
+        </div>
+    </div>
+</div>
